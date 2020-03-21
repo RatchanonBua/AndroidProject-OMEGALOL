@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">OMEGALOL</string>
+    <string name="match_history">Match History</string>
+    <string name="tournaments">Tournaments</string>
+    <string name="champions">Champions</string>
+    <string name="runes">Runes</string>
+    <string name="items">Items</string>
+    <string name="maps">Maps</string>
+</resources>

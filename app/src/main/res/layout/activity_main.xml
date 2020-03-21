@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintEnd_toStartOf="parent"
+    app:layout_constraintStart_toEndOf="parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/app_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:padding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/app_banner" />
+
+    <ImageView
+        android:id="@+id/user_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/app_banner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/user_icon"
+        tools:srcCompat="@drawable/user_icon" />
+
+    <TextView
+        android:id="@+id/account_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="48dp"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:text="Faltzner"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/app_banner"
+        app:layout_constraintStart_toEndOf="@+id/user_icon" />
+
+    <TextView
+        android:id="@+id/uid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:text="497041707"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/user_icon"
+        app:layout_constraintTop_toBottomOf="@+id/account_name" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_banner">
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
+
+            <Button
+                android:id="@+id/match_history"
+                android:layout_width="340dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/match_history"
+                android:gravity="center_vertical"
+                android:onClick="onPressMatchHistoryButton"
+                android:paddingLeft="20dp"
+                android:shadowColor="#000000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/match_history"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/tournaments"
+                android:layout_width="340dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/tournaments"
+                android:gravity="center_vertical"
+                android:onClick="onPressTournamentsButton"
+                android:paddingLeft="20dp"
+                android:shadowColor="#000000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/tournaments"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/champions"
+                android:layout_width="340dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/champions"
+                android:gravity="center_vertical"
+                android:onClick="onPressChampionsButton"
+                android:paddingLeft="20dp"
+                android:shadowColor="#000000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/champions"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/runes"
+                android:layout_width="340dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/runes"
+                android:gravity="center_vertical"
+                android:onClick="onPressRunesButton"
+                android:paddingLeft="20dp"
+                android:text="@string/runes"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/items"
+                android:layout_width="340dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/items"
+                android:gravity="center_vertical"
+                android:onClick="onPressItemsButton"
+                android:paddingLeft="20dp"
+                android:text="@string/items"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/maps"
+                android:layout_width="340dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/maps"
+                android:gravity="center_vertical"
+                android:onClick="onPressMapsButton"
+                android:paddingLeft="20dp"
+                android:text="@string/maps"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
