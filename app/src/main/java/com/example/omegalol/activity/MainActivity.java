@@ -15,10 +15,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (android.os.Build.VERSION.SDK_INT > 9) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-        }
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         setContentView(R.layout.activity_main);
     }
 
@@ -34,18 +32,21 @@ public class MainActivity extends AppCompatActivity {
 
         new Handler().postDelayed(new Runnable() {
             @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
+            public void run() { doubleBackToExitPressedOnce = false; }
         }, 2000);
     }
 
-    public void onPressMatchHistoryButton(View view) {
+    public void onPressMatchlistButton(final View view) {
 //        Toast.makeText(this, "Please Login with GarenaID", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, MatchHistoryActivity.class);
+        view.setClickable(false);
+        Intent intent = new Intent(this, MatchlistActivity.class);
         intent.putExtra("account", "Faltzner");
         intent.putExtra("uid", "497041707");
         startActivity(intent);
+        view.postDelayed(new Runnable() {
+            @Override
+            public void run() { view.setClickable(true); }
+        }, 1000);
     }
 
     public void onPressTournamentsButton(View view) {
@@ -53,9 +54,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onPressChampionsButton(View view) {
+    public void onPressChampionsButton(final View view) {
+        view.setClickable(false);
         Intent intent = new Intent(this, ChampionsActivity.class);
         startActivity(intent);
+        view.postDelayed(new Runnable() {
+            @Override
+            public void run() { view.setClickable(true); }
+        }, 500);
     }
 
     public void onPressRunesButton(View view) {

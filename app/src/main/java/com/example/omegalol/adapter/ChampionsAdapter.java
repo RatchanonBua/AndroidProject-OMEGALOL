@@ -19,13 +19,13 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class ChampionsRecyclerAdapter extends RecyclerView.Adapter<ChampionsRecyclerAdapter.ChampionsHolder> {
+public class ChampionsAdapter extends RecyclerView.Adapter<ChampionsAdapter.ChampionsHolder> {
     private ArrayList<JSONObject> dataset;
     private Context context;
 
-    public ChampionsRecyclerAdapter(Context context, ArrayList<JSONObject> championList) {
-        this.context = context;
+    public ChampionsAdapter(Context context, ArrayList<JSONObject> championList) {
         this.dataset = championList;
+        this.context = context;
     }
 
     @NonNull
@@ -41,16 +41,10 @@ public class ChampionsRecyclerAdapter extends RecyclerView.Adapter<ChampionsRecy
     public void onBindViewHolder(@NonNull ChampionsHolder holder, int position) {
         try {
             holder.jsonObject = dataset.get(position);
-            Picasso.get().load(generateUri(getChampionUriImage(position))).into(holder.champion_img);
             setChampionText(holder, getChampionName(position), getChampionTitle(position));
+            Picasso.get().load(generateUri(getImageName(position))).into(holder.champion_img);
         } catch (Exception e) {
-            try {
-                holder.champion_img.setImageResource(R.drawable.app_unknown);
-                setChampionText(holder, getChampionName(position), getChampionTitle(position));
-            } catch (JSONException jsonError) {
-                holder.champion_name.setText("Unknown Champion");
-                holder.champion_title.setText("Unknown Title");
-            }
+            holder.champion_img.setImageResource(R.drawable.app_unknown);
         }
     }
 
@@ -74,7 +68,7 @@ public class ChampionsRecyclerAdapter extends RecyclerView.Adapter<ChampionsRecy
         return nameObj.get("title").toString();
     }
 
-    private String getChampionUriImage(int position) throws JSONException {
+    private String getImageName(int position) throws JSONException {
         JSONObject nameObj = dataset.get(position);
         JSONObject imageObj = new JSONObject(nameObj.get("image").toString());
         return imageObj.get("full").toString();

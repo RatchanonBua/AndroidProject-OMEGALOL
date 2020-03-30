@@ -31,7 +31,7 @@
             android:name=".activity.ChampionsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.MatchHistoryActivity"
+            android:name=".activity.MatchlistActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.MainActivity"

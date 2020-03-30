@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MatchHistoryActivity">
+    tools:context=".activity.MatchlistActivity">
 
     <ImageView
         android:id="@+id/notfound_img"
@@ -37,7 +37,7 @@
         android:shadowDx="5"
         android:shadowDy="5"
         android:shadowRadius="5"
-        android:text="@string/match_history"
+        android:text="@string/matchlist"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
         android:textStyle="bold"
@@ -57,5 +57,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notfound_img"
         tools:text="Match not found." />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/matchlist_top">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/matchlist_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

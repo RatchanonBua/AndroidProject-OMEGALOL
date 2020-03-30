@@ -79,19 +79,19 @@
             android:paddingBottom="10dp">
 
             <Button
-                android:id="@+id/match_history"
+                android:id="@+id/matchlist"
                 android:layout_width="340dp"
                 android:layout_height="85dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/bn_matchlist"
                 android:gravity="center_vertical"
-                android:onClick="onPressMatchHistoryButton"
+                android:onClick="onPressMatchlistButton"
                 android:paddingLeft="20dp"
                 android:shadowColor="#000000"
                 android:shadowDx="5"
                 android:shadowDy="5"
                 android:shadowRadius="5"
-                android:text="@string/match_history"
+                android:text="@string/matchlist"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold" />

@@ -6,7 +6,7 @@
     android:layout_height="94dp">
 
     <ImageView
-        android:id="@+id/champion_img"
+        android:id="@+id/match_img"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="12dp"
@@ -16,34 +16,44 @@
         tools:srcCompat="@tools:sample/avatars[0]" />
 
     <TextView
-        android:id="@+id/champion_title"
+        android:id="@+id/match_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="24dp"
         android:textColor="#000000"
         android:textColorHint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/champion_img"
-        app:layout_constraintTop_toBottomOf="@+id/champion_name"
-        app:layout_constraintVertical_bias="0.714"
-        tools:text="Champion Title" />
+        app:layout_constraintStart_toEndOf="@+id/match_img"
+        tools:text="Match Time" />
 
     <TextView
-        android:id="@+id/champion_name"
+        android:id="@+id/match_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/champion_img"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/game_id"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Champion Name" />
+        tools:text="Match ID" />
+
+    <TextView
+        android:id="@+id/game_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Game ID"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/match_img"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/view_champion"
+        android:id="@+id/view_match"
         android:layout_width="35dp"
         android:layout_height="70dp"
         android:layout_marginEnd="12dp"

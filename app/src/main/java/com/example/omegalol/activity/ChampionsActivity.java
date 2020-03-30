@@ -9,7 +9,7 @@ import android.os.StrictMode;
 
 import com.example.omegalol.R;
 import com.example.omegalol.getter.ChampionsGetter;
-import com.example.omegalol.adapter.ChampionsRecyclerAdapter;
+import com.example.omegalol.adapter.ChampionsAdapter;
 
 public class ChampionsActivity extends AppCompatActivity {
 
@@ -29,7 +29,7 @@ public class ChampionsActivity extends AppCompatActivity {
 
         try {
             ChampionsGetter getter = new ChampionsGetter(this);
-            ChampionsRecyclerAdapter adapter = new ChampionsRecyclerAdapter(this, getter.getChampionList());
+            ChampionsAdapter adapter = new ChampionsAdapter(this, getter.getChampionList());
             recyclerView.setAdapter(adapter);
         } catch (Exception e) {
             finish();

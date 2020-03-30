@@ -7,8 +7,6 @@ import com.example.omegalol.service.DDragonService;
 
 import org.json.JSONObject;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -38,8 +36,6 @@ public class ChampionsGetter {
             JSONObject result = new JSONObject(body.string());
             return new JSONObject(result.get("data").toString());
         } catch (Exception e) {
-            StringWriter errors = new StringWriter();
-            e.printStackTrace(new PrintWriter(errors));
             return null;
         }
     }
@@ -47,6 +43,7 @@ public class ChampionsGetter {
     public ArrayList<JSONObject> getChampionList() throws Exception {
         JSONObject dataList = getDataFromService(context.getString(R.string.ddragon_uri)
                 , context.getString(R.string.version), context.getString(R.string.locale));
+        assert dataList != null;
         Iterator<String> keys = dataList.keys();
         ArrayList<JSONObject> championList = new ArrayList<>();
         while (keys.hasNext()) {
