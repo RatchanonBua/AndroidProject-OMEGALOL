@@ -1,12 +1,13 @@
-package com.example.omegalol;
+package com.example.omegalol.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.Toast;
+import com.example.omegalol.R;
 
 public class MainActivity extends AppCompatActivity {
     boolean doubleBackToExitPressedOnce = false;
@@ -40,26 +41,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onPressMatchHistoryButton(View view) {
-        Toast.makeText(this, "Please Login with GarenaID", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Please Login with GarenaID", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, MatchHistoryActivity.class);
+        intent.putExtra("account", "Faltzner");
+        intent.putExtra("uid", "497041707");
+        startActivity(intent);
     }
 
     public void onPressTournamentsButton(View view) {
-        Toast.makeText(this, "Tournaments function is coming soon.", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, TournamentsActivity.class);
+        startActivity(intent);
     }
 
     public void onPressChampionsButton(View view) {
-        Toast.makeText(this, "Champions function is coming soon.", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ChampionsActivity.class);
+        startActivity(intent);
     }
 
     public void onPressRunesButton(View view) {
-        Toast.makeText(this, "Runes function is coming soon.", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, RunesActivity.class);
+        startActivity(intent);
     }
 
     public void onPressItemsButton(View view) {
-        Toast.makeText(this, "Items function is coming soon.", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ItemsActivity.class);
+        startActivity(intent);
     }
 
     public void onPressMapsButton(View view) {
-        Toast.makeText(this, "Maps function is coming soon.", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
     }
 }
