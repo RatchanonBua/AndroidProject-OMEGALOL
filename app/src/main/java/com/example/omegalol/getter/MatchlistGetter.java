@@ -47,7 +47,7 @@ public class MatchlistGetter {
         return championList;
     }
 
-    public ArrayList<MatchReference> getSummonerMatchlist() throws Exception {
+    public ArrayList<MatchReference> getMatchlist() throws Exception {
         this.createRiotService();
         Summoner summoner = api.getSummonerByName(Platform.NA, account);
         MatchList matchList = api.getMatchListByAccountId(Platform.NA, summoner.getAccountId());

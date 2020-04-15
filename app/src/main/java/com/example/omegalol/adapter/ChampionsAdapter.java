@@ -32,7 +32,7 @@ public class ChampionsAdapter extends RecyclerView.Adapter<ChampionsAdapter.Cham
     @Override
     public ChampionsHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.layout_championlist, parent, false);
+                R.layout.layout_champion, parent, false);
         return new ChampionsHolder(view);
     }
 
@@ -75,8 +75,9 @@ public class ChampionsAdapter extends RecyclerView.Adapter<ChampionsAdapter.Cham
     }
 
     private String generateUri(String image) {
-        String baseUri = context.getString(R.string.champion_imguri);
-        return String.format("%s%s", baseUri, image);
+        String baseUri = context.getString(R.string.ddragon_uri);
+        String version = context.getString(R.string.version);
+        return String.format("%s%s%s%s%s", baseUri, "cdn/", version, "/img/champion/", image);
     }
 
     class ChampionsHolder extends RecyclerView.ViewHolder {

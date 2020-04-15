@@ -40,7 +40,7 @@ public class MatchlistAdapter extends RecyclerView.Adapter<MatchlistAdapter.Matc
     @Override
     public MatchlistHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.layout_matchlist, parent, false);
+                R.layout.layout_match, parent, false);
         return new MatchlistHolder(view);
     }
 
@@ -84,9 +84,10 @@ public class MatchlistAdapter extends RecyclerView.Adapter<MatchlistAdapter.Matc
         return imageObj.get("full").toString();
     }
 
-    private String generateUri (String image) {
-        String baseUri = context.getString(R.string.champion_imguri);
-        return String.format("%s%s", baseUri, image);
+    private String generateUri(String image) {
+        String baseUri = context.getString(R.string.ddragon_uri);
+        String version = context.getString(R.string.version);
+        return String.format("%s%s%s%s%s", baseUri, "cdn/", version, "/img/champion/", image);
     }
 
     class MatchlistHolder extends RecyclerView.ViewHolder {

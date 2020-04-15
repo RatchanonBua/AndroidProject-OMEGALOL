@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         view.postDelayed(new Runnable() {
             @Override
             public void run() { view.setClickable(true); }
-        }, 1000);
+        }, 500);
     }
 
     public void onPressTournamentsButton(View view) {
@@ -69,9 +69,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onPressItemsButton(View view) {
+    public void onPressItemsButton(final View view) {
+        view.setClickable(false);
         Intent intent = new Intent(this, ItemsActivity.class);
         startActivity(intent);
+        view.postDelayed(new Runnable() {
+            @Override
+            public void run() { view.setClickable(true); }
+        }, 500);
     }
 
     public void onPressMapsButton(View view) {

@@ -32,7 +32,7 @@ public class MatchlistActivity extends AppCompatActivity {
 
         try {
             MatchlistGetter getter = new MatchlistGetter(this, "tryndamere");
-            MatchlistAdapter adapter = new MatchlistAdapter(this, getter.getSummonerMatchlist(), getter.getChampionList());
+            MatchlistAdapter adapter = new MatchlistAdapter(this, getter.getMatchlist(), getter.getChampionList());
             recyclerView.setAdapter(adapter);
         } catch (Exception e) {
             ImageView notfound_img = findViewById(R.id.notfound_img);

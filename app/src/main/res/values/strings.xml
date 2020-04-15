@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">OMEGALOL</string>
-    <string name="api_key">RGAPI-33645c7b-be1d-4c74-b4d6-6582794f76d5</string>
+    <string name="api_key">RGAPI-6d33e196-82a7-43fe-a316-a6f502beb275</string>
 
     <string name="ddragon_uri">http://ddragon.leagueoflegends.com/</string>
-    <string name="champion_imguri">http://ddragon.leagueoflegends.com/cdn/10.5.1/img/champion/</string>
     <string name="version">10.5.1</string>
     <string name="locale">en_US</string>
 
