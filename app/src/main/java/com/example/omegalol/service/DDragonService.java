@@ -23,4 +23,10 @@ public interface DDragonService {
             @Path("version") String version,
             @Path("locale") String locale
     );
+
+    @GET("cdn/{version}/data/{locale}/map.json")
+    Call<ResponseBody> getMapList(
+            @Path("version") String version,
+            @Path("locale") String locale
+    );
 }

@@ -84,8 +84,13 @@ public class MainActivity extends AppCompatActivity {
         }, 500);
     }
 
-    public void onPressMapsButton(View view) {
+    public void onPressMapsButton(final View view) {
+        view.setClickable(false);
         Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
+        view.postDelayed(new Runnable() {
+            @Override
+            public void run() { view.setClickable(true); }
+        }, 500);
     }
 }
