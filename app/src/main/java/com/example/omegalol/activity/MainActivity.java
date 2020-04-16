@@ -64,9 +64,14 @@ public class MainActivity extends AppCompatActivity {
         }, 500);
     }
 
-    public void onPressRunesButton(View view) {
+    public void onPressRunesButton(final View view) {
+        view.setClickable(false);
         Intent intent = new Intent(this, RunesActivity.class);
         startActivity(intent);
+        view.postDelayed(new Runnable() {
+            @Override
+            public void run() { view.setClickable(true); }
+        }, 500);
     }
 
     public void onPressItemsButton(final View view) {

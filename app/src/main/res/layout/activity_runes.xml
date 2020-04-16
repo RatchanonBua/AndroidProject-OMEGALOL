@@ -33,4 +33,20 @@
         app:layout_constraintStart_toStartOf="@+id/runes_top"
         app:layout_constraintTop_toTopOf="@+id/runes_top" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/runes_top">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/runes_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

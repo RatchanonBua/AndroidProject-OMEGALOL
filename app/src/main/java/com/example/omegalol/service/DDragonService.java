@@ -17,4 +17,10 @@ public interface DDragonService {
             @Path("version") String version,
             @Path("locale") String locale
     );
+
+    @GET("cdn/{version}/data/{locale}/runesReforged.json")
+    Call<ResponseBody> getRuneList(
+            @Path("version") String version,
+            @Path("locale") String locale
+    );
 }

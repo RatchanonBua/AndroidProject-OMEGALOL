@@ -39,7 +39,7 @@ public class ItemsGetter {
             Call<ResponseBody> call = createService(uri).getItemList(version, locale);
             ResponseBody body = call.execute().body();
             assert body != null;
-            JSONObject result= new JSONObject(body.string());
+            JSONObject result = new JSONObject(body.string());
             return new JSONObject(result.get("data").toString());
         } catch (Exception e) {
             return null;
