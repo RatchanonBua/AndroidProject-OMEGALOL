@@ -24,7 +24,7 @@ public class ChampionDetailsObject {
     private ImageView chdetails_img;
     private TextView chdetails_name, chdetails_title, chdetails_tag, chdetails_story;
     // Spell Details
-    private ImageView passive_btn, first_spell, second_spell, third_spell, forth_spell;
+    private ImageView passive_btn, first_spell, second_spell, third_spell, fourth_spell;
     private Button ally_tips, enemy_tips;
 
     public ChampionDetailsObject(Activity activity) {
@@ -42,7 +42,7 @@ public class ChampionDetailsObject {
         first_spell = activity.findViewById(R.id.first_spell);
         second_spell = activity.findViewById(R.id.second_spell);
         third_spell = activity.findViewById(R.id.third_spell);
-        forth_spell = activity.findViewById(R.id.forth_spell);
+        fourth_spell = activity.findViewById(R.id.fourth_spell);
 
         ally_tips = activity.findViewById(R.id.ally_tips);
         enemy_tips = activity.findViewById(R.id.enemy_tips);
@@ -61,7 +61,7 @@ public class ChampionDetailsObject {
         Picasso.get().load(generateImageButtonUri(json, 0, "spell")).into(first_spell);
         Picasso.get().load(generateImageButtonUri(json, 1, "spell")).into(second_spell);
         Picasso.get().load(generateImageButtonUri(json, 2, "spell")).into(third_spell);
-        Picasso.get().load(generateImageButtonUri(json, 3, "spell")).into(forth_spell);
+        Picasso.get().load(generateImageButtonUri(json, 3, "spell")).into(fourth_spell);
     }
 
     public void setChampionTipsButton(final JSONObject json) {
@@ -117,10 +117,10 @@ public class ChampionDetailsObject {
                 return false;
             }
         });
-        forth_spell.setOnLongClickListener(new View.OnLongClickListener() {
+        fourth_spell.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                Toast.makeText(activity, "Forth Spell", Toast.LENGTH_LONG).show();
+                Toast.makeText(activity, "Fourth Spell", Toast.LENGTH_LONG).show();
                 return false;
             }
         });

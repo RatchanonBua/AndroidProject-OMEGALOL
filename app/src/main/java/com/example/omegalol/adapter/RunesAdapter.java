@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.omegalol.R;
+import com.example.omegalol.view_object.RuneObject;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -40,6 +41,7 @@ public class RunesAdapter extends RecyclerView.Adapter<RunesAdapter.RunesHolder>
         try {
             holder.jsonObject = dataset.get(position);
             holder.rune_name.setText(getTypeName(position));
+            holder.setSlotItemView();
             Picasso.get().load(generateUri(getImageName(position))).into(holder.rune_img);
         } catch (Exception e) {
             holder.rune_img.setImageResource(R.drawable.app_unknown);
@@ -70,11 +72,20 @@ public class RunesAdapter extends RecyclerView.Adapter<RunesAdapter.RunesHolder>
         ImageView rune_img;
         TextView rune_name;
         JSONObject jsonObject;
+        RuneObject viewObject;
 
         RunesHolder(View itemView) {
             super(itemView);
             rune_img = itemView.findViewById(R.id.rune_image);
             rune_name = itemView.findViewById(R.id.rune_name);
+        }
+
+        private void setSlotItemView() {
+            viewObject = new RuneObject(context, itemView, jsonObject);
+            viewObject.setFirstSlotItemView();
+            viewObject.setSecondSlotItemView();
+            viewObject.setThirdSlotItemView();
+            viewObject.setFourthSlotItemView();
         }
     }
 }

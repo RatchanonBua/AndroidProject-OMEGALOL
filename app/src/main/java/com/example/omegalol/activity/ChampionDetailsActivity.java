@@ -1,20 +1,14 @@
 package com.example.omegalol.activity;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
 
 import com.example.omegalol.R;
 import com.example.omegalol.view_object.ChampionDetailsObject;
-import com.squareup.picasso.Picasso;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.PrintWriter;
