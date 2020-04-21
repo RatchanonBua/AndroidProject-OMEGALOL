@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.omegalol.R;
-import com.example.omegalol.view_object.ItemDetailsObject;
+import com.example.omegalol.view_object.ItemDetailsView;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -102,7 +102,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
         TextView item_name, item_plaintxt;
         Button item_button;
         JSONObject jsonObject;
-        ItemDetailsObject viewObject;
+        ItemDetailsView viewObject;
 
         ItemsHolder(View itemView) {
             super(itemView);
@@ -115,7 +115,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
         void setItemButton() {
             String name = item_name.getText().toString();
             String text = item_plaintxt.getText().toString();
-            viewObject = new ItemDetailsObject(context, jsonObject, name, text);
+            viewObject = new ItemDetailsView(context, jsonObject, name, text);
             viewObject.setOnClickForItemDetails(item_button);
         }
     }

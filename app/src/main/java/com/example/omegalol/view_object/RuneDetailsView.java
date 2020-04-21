@@ -16,12 +16,12 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class RuneListObject {
+public class RuneDetailsView {
     private Context context;
     private View itemView;
     private JSONObject jsonObject;
 
-    public RuneListObject(Context context, View itemView, JSONObject jsonObject) {
+    public RuneDetailsView(Context context, View itemView, JSONObject jsonObject) {
         this.context = context;
         this.itemView = itemView;
         this.jsonObject = jsonObject;

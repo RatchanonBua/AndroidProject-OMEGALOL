@@ -16,12 +16,12 @@ import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
 
-public class ItemDetailsObject {
+public class ItemDetailsView {
     private Context context;
     private JSONObject jsonObject;
     private String itemNameStr, itemPlaintextStr;
 
-    public ItemDetailsObject(Context context, JSONObject jsonObject, String itemName, String itemPlaintext) {
+    public ItemDetailsView(Context context, JSONObject jsonObject, String itemName, String itemPlaintext) {
         this.context = context;
         this.jsonObject = jsonObject;
         this.itemNameStr = itemName;
