@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.omegalol.R;
-import com.example.omegalol.view_object.RuneObject;
+import com.example.omegalol.view_object.RuneListObject;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -72,7 +72,7 @@ public class RunesAdapter extends RecyclerView.Adapter<RunesAdapter.RunesHolder>
         ImageView rune_img;
         TextView rune_name;
         JSONObject jsonObject;
-        RuneObject viewObject;
+        RuneListObject viewObject;
 
         RunesHolder(View itemView) {
             super(itemView);
@@ -80,8 +80,8 @@ public class RunesAdapter extends RecyclerView.Adapter<RunesAdapter.RunesHolder>
             rune_name = itemView.findViewById(R.id.rune_name);
         }
 
-        private void setSlotItemView() {
-            viewObject = new RuneObject(context, itemView, jsonObject);
+        void setSlotItemView() {
+            viewObject = new RuneListObject(context, itemView, jsonObject);
             viewObject.setFirstSlotItemView();
             viewObject.setSecondSlotItemView();
             viewObject.setThirdSlotItemView();

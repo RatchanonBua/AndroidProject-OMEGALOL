@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.omegalol.R;
+import com.example.omegalol.view_object.ItemDetailsObject;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -42,6 +44,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
         try {
             holder.jsonObject = dataset.get(position);
             setItemText(holder, getItemName(position), getItemPlainText(position));
+            holder.setItemButton();
             Picasso.get().load(generateUri(getImageName(position))).into(holder.item_img);
         } catch (Exception e) {
             holder.item_img.setImageResource(R.drawable.app_unknown);
@@ -96,15 +99,24 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
 
     class ItemsHolder extends RecyclerView.ViewHolder {
         ImageView item_img;
-        TextView item_name;
-        TextView item_plaintxt;
+        TextView item_name, item_plaintxt;
+        Button item_button;
         JSONObject jsonObject;
+        ItemDetailsObject viewObject;
 
         ItemsHolder(View itemView) {
             super(itemView);
             item_img = itemView.findViewById(R.id.item_img);
             item_name = itemView.findViewById(R.id.item_name);
             item_plaintxt = itemView.findViewById(R.id.item_plaintxt);
+            item_button = itemView.findViewById(R.id.view_item);
+        }
+
+        void setItemButton() {
+            String name = item_name.getText().toString();
+            String text = item_plaintxt.getText().toString();
+            viewObject = new ItemDetailsObject(context, jsonObject, name, text);
+            viewObject.setOnClickForItemDetails(item_button);
         }
     }
 }

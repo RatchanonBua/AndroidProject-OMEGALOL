@@ -38,7 +38,6 @@ public class MapsAdapter extends RecyclerView.Adapter<MapsAdapter.MapsHolder> {
     @Override
     public void onBindViewHolder(@NonNull MapsHolder holder, int position) {
         try {
-            holder.jsonObject = dataset.get(position);
             holder.map_name.setText(getMapName(position));
             Picasso.get().load(generateUri(getImageName(position))).into(holder.map_img);
         } catch (Exception ignored) {}
@@ -69,7 +68,6 @@ public class MapsAdapter extends RecyclerView.Adapter<MapsAdapter.MapsHolder> {
     class MapsHolder extends RecyclerView.ViewHolder {
         ImageView map_img;
         TextView map_name;
-        JSONObject jsonObject;
 
         MapsHolder(View itemView) {
             super(itemView);
