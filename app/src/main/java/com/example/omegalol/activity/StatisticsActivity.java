@@ -9,28 +9,29 @@ import android.os.StrictMode;
 import android.widget.Toast;
 
 import com.example.omegalol.R;
-import com.example.omegalol.adapter.MapsAdapter;
-import com.example.omegalol.data_getter.MapsGetter;
+import com.example.omegalol.adapter.StatisticsAdapter;
+import com.example.omegalol.data_getter.StatisticsGetter;
 
-public class MapsActivity extends AppCompatActivity {
+public class StatisticsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        setContentView(R.layout.activity_maps);
-        generateMapList();
+        String account = getIntent().getStringExtra("account");
+        setContentView(R.layout.activity_statistics);
+        generateStatisticsData(account);
     }
 
-    private void generateMapList() {
-        RecyclerView recyclerView = findViewById(R.id.maps_recyclerview);
+    private void generateStatisticsData(String account) {
+        RecyclerView recyclerView = findViewById(R.id.statistics_recyclerview);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         try {
-            MapsGetter getter = new MapsGetter(this);
-            MapsAdapter adapter = new MapsAdapter(this, getter.getMapList());
+            StatisticsGetter getter = new StatisticsGetter(this, "tryndamere");
+            StatisticsAdapter adapter = new StatisticsAdapter(this, getter.getMatchlist(), getter.getChampionList());
             recyclerView.setAdapter(adapter);
         } catch (Exception e) {
             Toast.makeText(this, "The error occurs during load data.", Toast.LENGTH_LONG).show();

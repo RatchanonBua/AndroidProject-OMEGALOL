@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
         }, 2000);
     }
 
-    public void onPressMatchlistButton(final View view) {
+    public void onPressStatisticsButton(final View view) {
 //        Toast.makeText(this, "Please Login with GarenaID", Toast.LENGTH_SHORT).show();
         view.setClickable(false);
-        Intent intent = new Intent(this, MatchlistActivity.class);
+        Intent intent = new Intent(this, StatisticsActivity.class);
         intent.putExtra("account", "Faltzner");
         intent.putExtra("uid", "497041707");
         startActivity(intent);
@@ -49,9 +49,14 @@ public class MainActivity extends AppCompatActivity {
         }, 500);
     }
 
-    public void onPressTournamentsButton(View view) {
-        Intent intent = new Intent(this, TournamentsActivity.class);
+    public void onPressSummonerSpellsButton(final View view) {
+        view.setClickable(false);
+        Intent intent = new Intent(this, SummonerSpellsActivity.class);
         startActivity(intent);
+        view.postDelayed(new Runnable() {
+            @Override
+            public void run() { view.setClickable(true); }
+        }, 500);
     }
 
     public void onPressChampionsButton(final View view) {

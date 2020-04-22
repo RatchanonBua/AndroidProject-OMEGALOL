@@ -76,12 +76,12 @@ public class ChampionsAdapter extends RecyclerView.Adapter<ChampionsAdapter.Cham
     private String getChampionTag(int position) throws JSONException {
         JSONObject nameObj = dataset.get(position);
         JSONArray tagObj = new JSONArray(nameObj.get("tags").toString());
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < tagObj.length(); i++) {
-            result = result + tagObj.get(i);
-            result = (i < tagObj.length() - 1)? result + " / " : result + "";
+            result.append(tagObj.get(i));
+            result = new StringBuilder((i < tagObj.length() - 1) ? result + " / " : result + "");
         }
-        return result;
+        return result.toString();
     }
 
     private String getImageName(int position) throws JSONException {

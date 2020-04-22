@@ -1,18 +1,31 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">OMEGALOL</string>
-    <string name="api_key">RGAPI-39619845-2a28-4335-8865-fff937807b23</string>
+    <string name="api_key" tools:ignore="TypographyDashes">RGAPI-39619845-2a28-4335-8865-fff937807b23</string>
 
     <string name="ddragon_uri">http://ddragon.leagueoflegends.com/</string>
     <string name="version">10.5.1</string>
-    <string name="locale">en_US</string>
+    <string name="locale">th_TH</string>
     <string name="lolrift_uri">https://www.lolrift.com/</string>
 
-    <string name="matchlist">Match History</string>
-    <string name="tournaments">Tournaments</string>
+    <string name="statistics">Statistics</string>
+    <string name="summoner_spells">Summoner Spells</string>
     <string name="champions">Champions</string>
     <string name="runes">Runes</string>
     <string name="items">Items</string>
     <string name="maps">Maps</string>
 
-    <string name="match_notfound">Match not found.</string>
+    <string name="ally_tips">Ally Tips</string>
+    <string name="enemy_tips">Enemy Tips</string>
+    <string name="story">Champion\'s story</string>
+    <string name="passive">Passive</string>
+    <string name="spells">Spells</string>
+    <string name="sell">Sell:</string>
+    <string name="gold">Gold</string>
+    <string name="map_name">Map Name</string>
+    <string name="rune_type">Rune Type</string>
+    <string name="first_slot">First Slot</string>
+    <string name="second_slot">Second Slot</string>
+    <string name="third_slot">Third Slot</string>
+    <string name="fourth_slot">Fourth Slot</string>
+    <string name="level_required">Summoner\'s Level Required</string>
 </resources>

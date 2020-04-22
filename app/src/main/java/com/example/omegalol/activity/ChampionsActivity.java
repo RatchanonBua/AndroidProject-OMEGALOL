@@ -6,9 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.widget.Toast;
 
 import com.example.omegalol.R;
-import com.example.omegalol.getter.ChampionsGetter;
+import com.example.omegalol.data_getter.ChampionsGetter;
 import com.example.omegalol.adapter.ChampionsAdapter;
 
 public class ChampionsActivity extends AppCompatActivity {
@@ -32,6 +33,7 @@ public class ChampionsActivity extends AppCompatActivity {
             ChampionsAdapter adapter = new ChampionsAdapter(this, getter.getChampionList());
             recyclerView.setAdapter(adapter);
         } catch (Exception e) {
+            Toast.makeText(this, "The error occurs during load data.", Toast.LENGTH_LONG).show();
             finish();
         }
     }

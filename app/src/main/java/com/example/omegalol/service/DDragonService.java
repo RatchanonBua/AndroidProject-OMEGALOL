@@ -6,6 +6,12 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface DDragonService {
+    @GET("cdn/{version}/data/{locale}/summoner.json")
+    Call<ResponseBody> getSummonerSpellList(
+            @Path("version") String version,
+            @Path("locale") String locale
+    );
+
     @GET("cdn/{version}/data/{locale}/championFull.json")
     Call<ResponseBody> getChampionList(
             @Path("version") String version,

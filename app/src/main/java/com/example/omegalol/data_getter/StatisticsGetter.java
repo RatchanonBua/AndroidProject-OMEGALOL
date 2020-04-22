@@ -1,8 +1,7 @@
-package com.example.omegalol.getter;
+package com.example.omegalol.data_getter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.util.Log;
 
 import com.example.omegalol.R;
 
@@ -19,14 +18,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MatchlistGetter {
+public class StatisticsGetter {
     private Context context;
     private RiotApi api;
     private Map<Integer, JSONObject> championList;
     private String account;
 
     @SuppressLint("UseSparseArrays")
-    public MatchlistGetter(Context context, String account) {
+    public StatisticsGetter(Context context, String account) {
         this.context = context;
         this.account = account;
         this.championList = new HashMap<>();

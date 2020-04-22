@@ -6,10 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.widget.Toast;
 
 import com.example.omegalol.R;
 import com.example.omegalol.adapter.ItemsAdapter;
-import com.example.omegalol.getter.ItemsGetter;
+import com.example.omegalol.data_getter.ItemsGetter;
 
 public class ItemsActivity extends AppCompatActivity {
 
@@ -32,6 +33,7 @@ public class ItemsActivity extends AppCompatActivity {
             ItemsAdapter adapter = new ItemsAdapter(this, getter.getItemList(), getter.getItemJSON());
             recyclerView.setAdapter(adapter);
         } catch (Exception e) {
+            Toast.makeText(this, "The error occurs during load data.", Toast.LENGTH_LONG).show();
             finish();
         }
     }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.omegalol">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute" >
         <activity android:name=".activity.ChampionDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -28,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.TournamentsActivity"
+            android:name=".activity.SummonerSpellsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.MapsActivity"
@@ -43,7 +45,7 @@
             android:name=".activity.ChampionsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.MatchlistActivity"
+            android:name=".activity.StatisticsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.MainActivity"

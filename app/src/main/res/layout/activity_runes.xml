@@ -14,7 +14,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bn_runes" />
+        app:srcCompat="@drawable/bn_runes"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/runes_text"
@@ -45,8 +46,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/runes_recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

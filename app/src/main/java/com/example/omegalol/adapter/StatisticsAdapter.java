@@ -16,6 +16,7 @@ import com.squareup.picasso.Picasso;
 
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DateFormat;
@@ -25,30 +26,29 @@ import java.util.Date;
 import java.util.Map;
 import java.util.Objects;
 
-public class MatchlistAdapter extends RecyclerView.Adapter<MatchlistAdapter.MatchlistHolder> {
+public class StatisticsAdapter extends RecyclerView.Adapter<StatisticsAdapter.StatisticsHolder> {
     private ArrayList<MatchReference> dataset;
-    private Map<Integer, JSONObject> championsKey;
+    private Map<Integer, JSONObject> championKeys;
     private Context context;
 
-    public MatchlistAdapter(Context context, ArrayList<MatchReference> dataset, Map<Integer, JSONObject> keyList) {
+    public StatisticsAdapter(Context context, ArrayList<MatchReference> dataset, Map<Integer, JSONObject> keyList) {
         this.dataset = dataset;
-        this.championsKey = keyList;
+        this.championKeys = keyList;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public MatchlistHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public StatisticsHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.layout_match, parent, false);
-        return new MatchlistHolder(view);
+                R.layout.layout_statistics, parent, false);
+        return new StatisticsHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MatchlistHolder holder, int position) {
+    public void onBindViewHolder(@NonNull StatisticsHolder holder, int position) {
         try {
-            holder.matchObject = dataset.get(position);
-            setMatchText(holder, getGameID(position), getTimestamp(position));
+            setMatchText(holder, getChampionName(position), getGameID(position), getTimestamp(position));
             Picasso.get().load(generateUri(getImageName(position))).into(holder.match_img);
         } catch (Exception e) {
             holder.match_img.setImageResource(R.drawable.app_unknown);
@@ -60,9 +60,17 @@ public class MatchlistAdapter extends RecyclerView.Adapter<MatchlistAdapter.Matc
         return dataset.size();
     }
 
-    private void setMatchText(MatchlistHolder holder, String matchID, String matchTime) {
+    private void setMatchText(StatisticsHolder holder, String championName, String matchID, String matchTime) {
+        holder.match_champion.setText(championName);
         holder.match_id.setText(matchID);
         holder.match_time.setText(matchTime);
+    }
+
+    private String getChampionName(int position) throws JSONException {
+        int championID = dataset.get(position).getChampion();
+        JSONObject championObj = championKeys.get(championID);
+        assert championObj != null;
+        return championObj.getString("name");
     }
 
     private String getGameID(int position) {
@@ -79,7 +87,7 @@ public class MatchlistAdapter extends RecyclerView.Adapter<MatchlistAdapter.Matc
 
     private String getImageName(int position) throws Exception {
         int championID = dataset.get(position).getChampion();
-        JSONObject championObj = new JSONObject(Objects.requireNonNull(championsKey.get(championID)).toString());
+        JSONObject championObj = new JSONObject(Objects.requireNonNull(championKeys.get(championID)).toString());
         JSONObject imageObj = new JSONObject(championObj.get("image").toString());
         return imageObj.get("full").toString();
     }
@@ -90,15 +98,14 @@ public class MatchlistAdapter extends RecyclerView.Adapter<MatchlistAdapter.Matc
         return String.format("%s%s%s%s%s", baseUri, "cdn/", version, "/img/champion/", image);
     }
 
-    class MatchlistHolder extends RecyclerView.ViewHolder {
+    class StatisticsHolder extends RecyclerView.ViewHolder {
         ImageView match_img;
-        TextView match_id;
-        TextView match_time;
-        MatchReference matchObject;
+        TextView match_champion, match_id, match_time;
 
-        MatchlistHolder(View itemView) {
+        StatisticsHolder(View itemView) {
             super(itemView);
             match_img = itemView.findViewById(R.id.match_img);
+            match_champion = itemView.findViewById(R.id.match_champion);
             match_id = itemView.findViewById(R.id.match_id);
             match_time = itemView.findViewById(R.id.match_time);
         }

@@ -15,7 +15,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bn_champions" />
+        app:srcCompat="@drawable/bn_champions"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/champion_text"
@@ -68,7 +69,8 @@
                         android:layout_height="70dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:srcCompat="@tools:sample/avatars[0]" />
+                        tools:srcCompat="@tools:sample/avatars[0]"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/chdetails_name"
@@ -126,16 +128,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Ally Tips"
-                            android:textSize="10sp" />
+                            android:text="@string/ally_tips"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
 
                         <Button
                             android:id="@+id/enemy_tips"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Enemy Tips"
-                            android:textSize="10sp" />
+                            android:text="@string/enemy_tips"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
+
                     </LinearLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -155,7 +160,7 @@
                         android:id="@+id/story_text"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Champion's story"
+                        android:text="@string/story"
                         android:textAllCaps="true"
                         android:textColor="#000000"
                         android:textSize="15sp"
@@ -175,7 +180,9 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/story_text"
-                        tools:text="Unknown Story" />
+                        tools:text="Unknown Story"
+                        tools:ignore="SmallSp" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
@@ -184,7 +191,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="16dp"
-                    android:text="Passive"
+                    android:text="@string/passive"
                     android:textAllCaps="true"
                     android:textColor="#000000"
                     android:textSize="15sp"
@@ -210,7 +217,8 @@
                         android:layout_marginTop="2dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:srcCompat="@tools:sample/avatars[5]" />
+                        tools:srcCompat="@tools:sample/avatars[5]"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/passive_title"
@@ -237,7 +245,9 @@
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toEndOf="@+id/passive_spell"
                         app:layout_constraintTop_toBottomOf="@+id/passive_title"
-                        tools:text="Passive Description" />
+                        tools:text="Passive Description"
+                        tools:ignore="SmallSp" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
@@ -246,7 +256,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="16dp"
-                    android:text="Spells"
+                    android:text="@string/spells"
                     android:textAllCaps="true"
                     android:textColor="#000000"
                     android:textSize="15sp"
@@ -281,7 +291,8 @@
                         android:layout_marginTop="2dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:srcCompat="@tools:sample/avatars[6]" />
+                        tools:srcCompat="@tools:sample/avatars[6]"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/spell_title_first"
@@ -307,7 +318,8 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/first_spell"
                         app:layout_constraintTop_toBottomOf="@+id/spell_title_first"
-                        tools:text="Spell Description" />
+                        tools:text="Spell Description"
+                        tools:ignore="SmallSp" />
 
                     <TextView
                         android:id="@+id/spell_cd_first"
@@ -321,8 +333,11 @@
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toEndOf="@+id/first_spell"
                         app:layout_constraintTop_toBottomOf="@+id/spell_desc_first"
-                        tools:text="Spell Cooldown" />
+                        tools:text="Spell Cooldown"
+                        tools:ignore="SmallSp" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -349,7 +364,8 @@
                         android:layout_marginTop="2dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:srcCompat="@tools:sample/avatars[7]" />
+                        tools:srcCompat="@tools:sample/avatars[7]"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/spell_title_second"
@@ -377,7 +393,8 @@
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toEndOf="@+id/second_spell"
                         app:layout_constraintTop_toBottomOf="@+id/spell_title_second"
-                        tools:text="Spell Description" />
+                        tools:text="Spell Description"
+                        tools:ignore="SmallSp" />
 
                     <TextView
                         android:id="@+id/spell_cd_second"
@@ -390,9 +407,11 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/second_spell"
                         app:layout_constraintTop_toBottomOf="@+id/spell_desc_second"
-                        tools:text="Spell Cooldown" />
+                        tools:text="Spell Cooldown"
+                        tools:ignore="SmallSp" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -419,7 +438,8 @@
                         android:layout_marginTop="2dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:srcCompat="@tools:sample/avatars[9]" />
+                        tools:srcCompat="@tools:sample/avatars[9]"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/spell_title_third"
@@ -446,7 +466,8 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/third_spell"
                         app:layout_constraintTop_toBottomOf="@+id/spell_title_third"
-                        tools:text="Spell Description" />
+                        tools:text="Spell Description"
+                        tools:ignore="SmallSp" />
 
                     <TextView
                         android:id="@+id/spell_cd_third"
@@ -459,8 +480,11 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/third_spell"
                         app:layout_constraintTop_toBottomOf="@+id/spell_desc_third"
-                        tools:text="Spell Cooldown" />
+                        tools:text="Spell Cooldown"
+                        tools:ignore="SmallSp" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -487,7 +511,8 @@
                         android:layout_marginTop="2dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:srcCompat="@tools:sample/avatars[11]" />
+                        tools:srcCompat="@tools:sample/avatars[11]"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/spell_title_fourth"
@@ -513,7 +538,8 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/fourth_spell"
                         app:layout_constraintTop_toBottomOf="@+id/spell_title_fourth"
-                        tools:text="Spell Description" />
+                        tools:text="Spell Description"
+                        tools:ignore="SmallSp" />
 
                     <TextView
                         android:id="@+id/spell_cd_fourth"
@@ -526,12 +552,15 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/fourth_spell"
                         app:layout_constraintTop_toBottomOf="@+id/spell_desc_fourth"
-                        tools:text="Spell Cooldown" />
+                        tools:text="Spell Cooldown"
+                        tools:ignore="SmallSp" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
+
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

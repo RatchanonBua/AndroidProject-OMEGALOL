@@ -1,4 +1,4 @@
-package com.example.omegalol.getter;
+package com.example.omegalol.data_getter;
 
 import android.content.Context;
 

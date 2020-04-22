@@ -14,7 +14,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bn_items" />
+        app:srcCompat="@drawable/bn_items"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/items_text"
@@ -46,6 +47,7 @@
             android:id="@+id/items_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

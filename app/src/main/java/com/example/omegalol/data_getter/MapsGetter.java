@@ -1,16 +1,12 @@
-package com.example.omegalol.getter;
+package com.example.omegalol.data_getter;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.example.omegalol.R;
 import com.example.omegalol.service.DDragonService;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -19,10 +15,10 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RunesGetter {
+public class MapsGetter {
     private Context context;
 
-    public RunesGetter(Context context) {
+    public MapsGetter(Context context) {
         this.context = context;
     }
 
@@ -32,26 +28,28 @@ public class RunesGetter {
         return retrofit.create(DDragonService.class);
     }
 
-    private JSONArray getDataFromService(String uri, String version, String locale) {
+    private JSONObject getDataFromService(String uri, String version, String locale) {
         try {
-            Call<ResponseBody> call = createService(uri).getRuneList(version, locale);
+            Call<ResponseBody> call = createService(uri).getMapList(version, locale);
             ResponseBody body = call.execute().body();
             assert body != null;
-            return new JSONArray(body.string());
+            JSONObject result = new JSONObject(body.string());
+            return new JSONObject(result.get("data").toString());
         } catch (Exception e) {
             return null;
         }
     }
 
-    public ArrayList<JSONObject> getRuneList() throws Exception {
-        JSONArray dataList = getDataFromService(context.getString(R.string.ddragon_uri)
+    public ArrayList<JSONObject> getMapList() throws Exception {
+        JSONObject dataList = getDataFromService(context.getString(R.string.ddragon_uri)
                 , context.getString(R.string.version), context.getString(R.string.locale));
         assert dataList != null;
-        ArrayList<JSONObject> runeList = new ArrayList<>();
-        for (int i = 0; i < dataList.length(); i++) {
-            JSONObject json = dataList.getJSONObject(i);
-            runeList.add(json);
+        Iterator<String> keys = dataList.keys();
+        ArrayList<JSONObject> mapList = new ArrayList<>();
+        while (keys.hasNext()) {
+            String key = keys.next();
+            mapList.add((JSONObject) dataList.get(key));
         }
-        return runeList;
+        return mapList;
     }
 }

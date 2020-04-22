@@ -14,7 +14,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bn_maps" />
+        app:srcCompat="@drawable/bn_maps"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/maps_text"
@@ -46,6 +47,7 @@
             android:id="@+id/maps_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
