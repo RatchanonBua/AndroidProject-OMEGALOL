@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.omegalol">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <dist:module dist:instant="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute" >
+        <activity android:name=".activity.ChampionDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SummonerSpellsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MapsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ItemsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RunesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChampionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CountriesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

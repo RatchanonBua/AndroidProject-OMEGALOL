@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">OMEGALOL</string>
+    <string name="ddragon_uri">http://ddragon.leagueoflegends.com/</string>
+    <string name="lolrift_uri">https://www.lolrift.com/</string>
+    <string name="flag_image_uri">https://flagpedia.net/data/flags/normal/%s.png</string>
+    <string name="version">10.5.1</string>
+    <string name="default_locale">en_US</string>
+
+    <string name="countries">Available Countries</string>
+    <string name="summoner_spells">Summoner Spells</string>
+    <string name="champions">Champions</string>
+    <string name="runes">Runes</string>
+    <string name="items">Items</string>
+    <string name="maps">Maps</string>
+
+    <string name="ally_tips">Ally Tips</string>
+    <string name="enemy_tips">Enemy Tips</string>
+    <string name="story">Champion\'s story</string>
+    <string name="passive">Passive</string>
+    <string name="spells">Spells</string>
+    <string name="sell">Sell:</string>
+    <string name="gold">Gold</string>
+    <string name="map_name">Map Name</string>
+    <string name="rune_type">Rune Type</string>
+    <string name="first_slot">First Slot</string>
+    <string name="second_slot">Second Slot</string>
+    <string name="third_slot">Third Slot</string>
+    <string name="fourth_slot">Fourth Slot</string>
+    <string name="level_required">Summoner\'s Level Required</string>
+
+    <string name="dialog_build">Do you want to change application to this language?</string>
+</resources>

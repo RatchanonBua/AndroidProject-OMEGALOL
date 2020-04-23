@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="es_AR"> <item>AR</item> <item>es_AR</item> <item>Spanish (Argentina)</item> </string-array>
+    <string-array name="en_AU"> <item>AU</item> <item>en_AU</item> <item>English (Australia)</item> </string-array>
+    <string-array name="pt_BR"> <item>BR</item> <item>pt_BR</item> <item>Portuguese (Brazil)</item> </string-array>
+    <string-array name="zh_CN"> <item>CN</item> <item>zh_CN</item> <item>Chinese (China)</item> </string-array>
+    <string-array name="cs_CZ"> <item>CZ</item> <item>cs_CZ</item> <item>Czech (Czech)</item> </string-array>
+    <string-array name="de_DE"> <item>DE</item> <item>de_DE</item> <item>German (German)</item> </string-array>
+    <string-array name="es_ES"> <item>ES</item> <item>es_ES</item> <item>Spanish (Spain)</item> </string-array>
+    <string-array name="fr_FR"> <item>FR</item> <item>fr_FR</item> <item>French (France)</item> </string-array>
+    <string-array name="en_GB"> <item>GB</item> <item>en_GB</item> <item>English (UK)</item> </string-array>
+    <string-array name="el_GR"> <item>GR</item> <item>el_GR</item> <item>Greek (Greece)</item> </string-array>
+    <string-array name="hu_HU"> <item>HU</item> <item>hu_HU</item> <item>Hungarian (Hungary)</item> </string-array>
+    <string-array name="id_ID"> <item>ID</item> <item>id_ID</item> <item>Indonesian (Indonesia)</item> </string-array>
+    <string-array name="it_IT"> <item>IT</item> <item>it_IT</item> <item>Italian (Italy)</item> </string-array>
+    <string-array name="ja_JP"> <item>JP</item> <item>ja_JP</item> <item>Japanese (Japan)</item> </string-array>
+    <string-array name="ko_KR"> <item>KR</item> <item>ko_KR</item> <item>Korean (Korea)</item> </string-array>
+    <string-array name="es_MX"> <item>MX</item> <item>es_MX</item> <item>Spanish (Mexico)</item> </string-array>
+    <string-array name="zh_MY"> <item>MY</item> <item>zh_MY</item> <item>Chinese (Malaysia)</item> </string-array>
+    <string-array name="en_PH"> <item>PH</item> <item>en_PH</item> <item>English (Philippines)</item> </string-array>
+    <string-array name="pl_PL"> <item>PL</item> <item>pl_PL</item> <item>Polish (Poland)</item> </string-array>
+    <string-array name="ro_RO"> <item>RO</item> <item>ro_RO</item> <item>Romanian (Romania)</item> </string-array>
+    <string-array name="ru_RU"> <item>RU</item> <item>ru_RU</item> <item>Russian (Russia)</item> </string-array>
+    <string-array name="en_SG"> <item>SG</item> <item>en_SG</item> <item>English (Singapore)</item> </string-array>
+    <string-array name="th_TH"> <item>TH</item> <item>th_TH</item> <item>Thai (Thailand)</item> </string-array>
+    <string-array name="tr_TR"> <item>TR</item> <item>tr_TR</item> <item>Turkish (Turkey)</item> </string-array>
+    <string-array name="zh_TW"> <item>TW</item> <item>zh_TW</item> <item>Chinese (Taiwan)</item> </string-array>
+    <string-array name="en_US"> <item>US</item> <item>en_US</item> <item>English (USA)</item> </string-array>
+    <string-array name="vn_VN"> <item>VN</item> <item>vn_VN</item> <item>Vietnamese (Vietnam)</item> </string-array>
+
+    <array name="country_code">
+        <item>@array/es_AR</item>
+        <item>@array/en_AU</item>
+        <item>@array/pt_BR</item>
+        <item>@array/zh_CN</item>
+        <item>@array/cs_CZ</item>
+        <item>@array/de_DE</item>
+        <item>@array/es_ES</item>
+        <item>@array/fr_FR</item>
+        <item>@array/en_GB</item>
+        <item>@array/el_GR</item>
+        <item>@array/hu_HU</item>
+        <item>@array/id_ID</item>
+        <item>@array/it_IT</item>
+        <item>@array/ja_JP</item>
+        <item>@array/ko_KR</item>
+        <item>@array/es_MX</item>
+        <item>@array/zh_MY</item>
+        <item>@array/en_PH</item>
+        <item>@array/pl_PL</item>
+        <item>@array/ro_RO</item>
+        <item>@array/ru_RU</item>
+        <item>@array/en_SG</item>
+        <item>@array/th_TH</item>
+        <item>@array/tr_TR</item>
+        <item>@array/zh_TW</item>
+        <item>@array/en_US</item>
+        <item>@array/vn_VN</item>
+    </array>
+</resources>
