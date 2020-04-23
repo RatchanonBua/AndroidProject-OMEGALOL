@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.example.omegalol.R;
 
 public class MainActivity extends AppCompatActivity {
-    boolean doubleBackToExitPressedOnce = false;
+    private boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +36,9 @@ public class MainActivity extends AppCompatActivity {
         }, 2000);
     }
 
-    public void onPressStatisticsButton(final View view) {
-//        Toast.makeText(this, "Please Login with GarenaID", Toast.LENGTH_SHORT).show();
+    public void onPressLanguagesButton(final View view) {
         view.setClickable(false);
-        Intent intent = new Intent(this, StatisticsActivity.class);
-        intent.putExtra("account", "Faltzner");
-        intent.putExtra("uid", "497041707");
+        Intent intent = new Intent(this, CountriesActivity.class);
         startActivity(intent);
         view.postDelayed(new Runnable() {
             @Override

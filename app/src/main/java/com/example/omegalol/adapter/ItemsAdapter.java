@@ -21,9 +21,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder> {
-    private ArrayList<JSONObject> dataset;
-    private JSONObject itemJSON;
-    private Context context;
+    private final ArrayList<JSONObject> dataset;
+    private final JSONObject itemJSON;
+    private final Context context;
 
     public ItemsAdapter(Context context, ArrayList<JSONObject> itemList, JSONObject itemJSON) {
         this.dataset = itemList;
@@ -72,8 +72,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
         if (plaintxt.equals("")) {
             try {
                 String recipe = itemObj.get("specialRecipe").toString();
-                JSONObject specialRecipt = new JSONObject(itemJSON.get(recipe).toString());
-                return String.format("Special Recipe: %s", specialRecipt.get("name").toString());
+                JSONObject specialRecipe = new JSONObject(itemJSON.get(recipe).toString());
+                return String.format("Special Recipe: %s", specialRecipe.get("name").toString());
             } catch (Exception recipeError) {
                 JSONObject obj = new JSONObject(itemObj.get("gold").toString());
                 if (obj.get("purchasable").toString().equals("true")) {
@@ -98,9 +98,9 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
     }
 
     class ItemsHolder extends RecyclerView.ViewHolder {
-        ImageView item_img;
-        TextView item_name, item_plaintxt;
-        Button item_button;
+        final ImageView item_img;
+        final TextView item_name, item_plaintxt;
+        final Button item_button;
         JSONObject jsonObject;
         ItemDetailsView viewObject;
 

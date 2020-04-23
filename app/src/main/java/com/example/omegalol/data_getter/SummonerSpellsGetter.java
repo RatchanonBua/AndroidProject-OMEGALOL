@@ -1,6 +1,7 @@
 package com.example.omegalol.data_getter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.example.omegalol.R;
 import com.example.omegalol.service.DDragonService;
@@ -16,7 +17,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SummonerSpellsGetter {
-    private Context context;
+    private final Context context;
 
     public SummonerSpellsGetter(Context context) {
         this.context = context;
@@ -42,7 +43,7 @@ public class SummonerSpellsGetter {
 
     public ArrayList<JSONObject> getSummonerSpellList() throws Exception {
         JSONObject dataList = getDataFromService(context.getString(R.string.ddragon_uri)
-                , context.getString(R.string.version), context.getString(R.string.locale));
+                , context.getString(R.string.version), getSharedPreferencesLanguage());
         assert dataList != null;
         Iterator<String> keys = dataList.keys();
         ArrayList<JSONObject> summonerSpellList = new ArrayList<>();
@@ -51,5 +52,10 @@ public class SummonerSpellsGetter {
             summonerSpellList.add((JSONObject) dataList.get(key));
         }
         return summonerSpellList;
+    }
+
+    private String getSharedPreferencesLanguage() {
+        SharedPreferences preferences = context.getSharedPreferences("OMEGALOL", Context.MODE_PRIVATE);
+        return preferences.getString("language", context.getString(R.string.default_locale));
     }
 }

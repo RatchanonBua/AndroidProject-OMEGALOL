@@ -1,13 +1,12 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">OMEGALOL</string>
-    <string name="api_key" tools:ignore="TypographyDashes">RGAPI-39619845-2a28-4335-8865-fff937807b23</string>
-
     <string name="ddragon_uri">http://ddragon.leagueoflegends.com/</string>
-    <string name="version">10.5.1</string>
-    <string name="locale">th_TH</string>
     <string name="lolrift_uri">https://www.lolrift.com/</string>
+    <string name="flag_image_uri">https://flagpedia.net/data/flags/normal/%s.png</string>
+    <string name="version">10.5.1</string>
+    <string name="default_locale">en_US</string>
 
-    <string name="statistics">Statistics</string>
+    <string name="countries">Available Countries</string>
     <string name="summoner_spells">Summoner Spells</string>
     <string name="champions">Champions</string>
     <string name="runes">Runes</string>
@@ -28,4 +27,6 @@
     <string name="third_slot">Third Slot</string>
     <string name="fourth_slot">Fourth Slot</string>
     <string name="level_required">Summoner\'s Level Required</string>
+
+    <string name="dialog_build">Do you want to change application to this language?</string>
 </resources>

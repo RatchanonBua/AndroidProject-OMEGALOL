@@ -17,9 +17,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class RuneDetailsView {
-    private Context context;
-    private View itemView;
-    private JSONObject jsonObject;
+    private final Context context;
+    private final View itemView;
+    private final JSONObject jsonObject;
 
     public RuneDetailsView(Context context, View itemView, JSONObject jsonObject) {
         this.context = context;

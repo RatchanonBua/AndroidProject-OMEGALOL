@@ -17,7 +17,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/app_banner_crop" />
+        app:srcCompat="@drawable/app_banner_crop"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:layout_width="0dp"
@@ -54,13 +55,13 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/bn_statistics"
                 android:gravity="center_vertical"
-                android:onClick="onPressStatisticsButton"
+                android:onClick="onPressLanguagesButton"
                 android:paddingStart="20dp"
                 android:shadowColor="#000000"
                 android:shadowDx="5"
                 android:shadowDy="5"
                 android:shadowRadius="5"
-                android:text="@string/statistics"
+                android:text="@string/countries"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold"

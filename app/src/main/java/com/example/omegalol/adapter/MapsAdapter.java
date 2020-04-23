@@ -19,8 +19,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class MapsAdapter extends RecyclerView.Adapter<MapsAdapter.MapsHolder> {
-    private ArrayList<JSONObject> dataset;
-    private Context context;
+    private final ArrayList<JSONObject> dataset;
+    private final Context context;
 
     public MapsAdapter(Context context, ArrayList<JSONObject> mapsList) {
         this.dataset = mapsList;
@@ -66,8 +66,8 @@ public class MapsAdapter extends RecyclerView.Adapter<MapsAdapter.MapsHolder> {
     }
 
     class MapsHolder extends RecyclerView.ViewHolder {
-        ImageView map_img;
-        TextView map_name;
+        final ImageView map_img;
+        final TextView map_name;
 
         MapsHolder(View itemView) {
             super(itemView);

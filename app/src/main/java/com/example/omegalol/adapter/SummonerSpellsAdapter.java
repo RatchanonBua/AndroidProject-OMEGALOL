@@ -19,8 +19,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class SummonerSpellsAdapter extends RecyclerView.Adapter<SummonerSpellsAdapter.SummonerSpellsHolder> {
-    private ArrayList<JSONObject> dataset;
-    private Context context;
+    private final ArrayList<JSONObject> dataset;
+    private final Context context;
 
     public SummonerSpellsAdapter(Context context, ArrayList<JSONObject> summonerSpellList) {
         this.dataset = summonerSpellList;
@@ -76,8 +76,8 @@ public class SummonerSpellsAdapter extends RecyclerView.Adapter<SummonerSpellsAd
     }
 
     class SummonerSpellsHolder extends RecyclerView.ViewHolder {
-        ImageView smnspell_img;
-        TextView smnspell_name, smnspell_cd, smnspell_level, smnspell_desc;
+        final ImageView smnspell_img;
+        final TextView smnspell_name, smnspell_cd, smnspell_level, smnspell_desc;
 
         SummonerSpellsHolder(View itemView) {
             super(itemView);

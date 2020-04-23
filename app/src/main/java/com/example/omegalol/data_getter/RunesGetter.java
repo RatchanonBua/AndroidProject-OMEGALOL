@@ -1,6 +1,7 @@
 package com.example.omegalol.data_getter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.example.omegalol.R;
 import com.example.omegalol.service.DDragonService;
@@ -16,7 +17,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RunesGetter {
-    private Context context;
+    private final Context context;
 
     public RunesGetter(Context context) {
         this.context = context;
@@ -41,7 +42,7 @@ public class RunesGetter {
 
     public ArrayList<JSONObject> getRuneList() throws Exception {
         JSONArray dataList = getDataFromService(context.getString(R.string.ddragon_uri)
-                , context.getString(R.string.version), context.getString(R.string.locale));
+                , context.getString(R.string.version), getSharedPreferencesLanguage());
         assert dataList != null;
         ArrayList<JSONObject> runeList = new ArrayList<>();
         for (int i = 0; i < dataList.length(); i++) {
@@ -49,5 +50,10 @@ public class RunesGetter {
             runeList.add(json);
         }
         return runeList;
+    }
+
+    private String getSharedPreferencesLanguage() {
+        SharedPreferences preferences = context.getSharedPreferences("OMEGALOL", Context.MODE_PRIVATE);
+        return preferences.getString("language", context.getString(R.string.default_locale));
     }
 }

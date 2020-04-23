@@ -1,6 +1,7 @@
 package com.example.omegalol.data_getter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.example.omegalol.R;
 import com.example.omegalol.service.DDragonService;
@@ -20,8 +21,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ItemsGetter {
-    private Context context;
-    private String[] duplicate = new String[]{
+    private final Context context;
+    private final String[] duplicate = new String[]{
             "2424", "3175", "3400", "3410", "3422", "3455", "3514", "3600"};
 
     public ItemsGetter(Context context) {
@@ -63,12 +64,12 @@ public class ItemsGetter {
 
     public JSONObject getItemJSON() {
         return getDataFromService(context.getString(R.string.ddragon_uri)
-                , context.getString(R.string.version), context.getString(R.string.locale));
+                , context.getString(R.string.version), getSharedPreferencesLanguage());
     }
 
     private ArrayList<JSONObject> sortJSONObject(ArrayList<JSONObject> itemList) {
         Collections.sort(itemList, new Comparator<JSONObject>() {
-            private String KEY_NAME = "name";
+            private final String KEY_NAME = "name";
 
             @Override
             public int compare(JSONObject o1, JSONObject o2) {
@@ -82,5 +83,10 @@ public class ItemsGetter {
             }
         });
         return itemList;
+    }
+
+    private String getSharedPreferencesLanguage() {
+        SharedPreferences preferences = context.getSharedPreferences("OMEGALOL", Context.MODE_PRIVATE);
+        return preferences.getString("language", context.getString(R.string.default_locale));
     }
 }

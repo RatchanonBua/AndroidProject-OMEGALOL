@@ -26,7 +26,7 @@ import org.json.JSONObject;
 import java.util.Objects;
 
 public class ChampionDetailsView {
-    private Activity activity;
+    private final Activity activity;
     private ImageView chdetails_img;
     private TextView chdetails_name, chdetails_title, chdetails_tag, chdetails_story;
     private ImageView passive_btn, first_spell, second_spell, third_spell, fourth_spell;

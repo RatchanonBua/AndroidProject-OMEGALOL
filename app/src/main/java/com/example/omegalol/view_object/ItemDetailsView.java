@@ -17,9 +17,9 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONObject;
 
 public class ItemDetailsView {
-    private Context context;
-    private JSONObject jsonObject;
-    private String itemNameStr, itemPlaintextStr;
+    private final Context context;
+    private final JSONObject jsonObject;
+    private final String itemNameStr, itemPlaintextStr;
 
     public ItemDetailsView(Context context, JSONObject jsonObject, String itemName, String itemPlaintext) {
         this.context = context;

@@ -24,8 +24,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class ChampionsAdapter extends RecyclerView.Adapter<ChampionsAdapter.ChampionsHolder> {
-    private ArrayList<JSONObject> dataset;
-    private Context context;
+    private final ArrayList<JSONObject> dataset;
+    private final Context context;
 
     public ChampionsAdapter(Context context, ArrayList<JSONObject> championList) {
         this.dataset = championList;
@@ -97,11 +97,9 @@ public class ChampionsAdapter extends RecyclerView.Adapter<ChampionsAdapter.Cham
     }
 
     class ChampionsHolder extends RecyclerView.ViewHolder {
-        ImageView champion_img;
-        TextView champion_name;
-        TextView champion_title;
-        TextView champion_tag;
-        Button view_champion;
+        final ImageView champion_img;
+        final TextView champion_name, champion_title, champion_tag;
+        final Button view_champion;
         JSONObject jsonObject;
 
         ChampionsHolder(View itemView) {

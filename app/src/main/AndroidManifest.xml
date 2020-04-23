@@ -45,7 +45,7 @@
             android:name=".activity.ChampionsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.StatisticsActivity"
+            android:name=".activity.CountriesActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.MainActivity"

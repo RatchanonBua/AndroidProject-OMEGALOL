@@ -20,8 +20,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class RunesAdapter extends RecyclerView.Adapter<RunesAdapter.RunesHolder> {
-    private ArrayList<JSONObject> dataset;
-    private Context context;
+    private final ArrayList<JSONObject> dataset;
+    private final Context context;
 
     public RunesAdapter(Context context, ArrayList<JSONObject> runeList) {
         this.dataset = runeList;
@@ -69,8 +69,8 @@ public class RunesAdapter extends RecyclerView.Adapter<RunesAdapter.RunesHolder>
     }
 
     class RunesHolder extends RecyclerView.ViewHolder {
-        ImageView rune_img;
-        TextView rune_name;
+        final ImageView rune_img;
+        final TextView rune_name;
         JSONObject jsonObject;
         RuneDetailsView viewObject;
 
